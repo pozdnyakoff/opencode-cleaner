@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A command-line tool to clean up OpenCode data",
   "license": "MIT",
+  "author": "Ilya Pozdnyakov <ipozdnyakoff@outlook.com>",
   "type": "module",
   "bin": {
     "opencode-cleaner": "dist/cli.js"
