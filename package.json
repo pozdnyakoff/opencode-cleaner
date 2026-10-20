@@ -1,0 +1,35 @@
+{
+  "name": "opencode-cleaner",
+  "version": "1.0.0",
+  "description": "A command-line tool to clean up OpenCode data",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "opencode-cleaner": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit && prettier --check .",
+    "format": "prettier --write .",
+    "prepack": "npm run build",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "@inquirer/confirm": "^6.3.4",
+    "acorn": "^8.19.0",
+    "execa": "^10.2.0",
+    "which": "^7.0.0",
+    "yargs": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node24": "^24.0.5",
+    "@types/node": "^24.19.2",
+    "@types/which": "^3.0.4",
+    "@types/yargs": "^17.0.35",
+    "prettier": "^3.9.10",
+    "typescript": "^7.0.2"
+  }
+}
