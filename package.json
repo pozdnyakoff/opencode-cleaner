@@ -8,7 +8,10 @@
     "cli",
     "cleanup"
   ],
-  "repository": "github:pozdnyakoff/opencode-cleaner",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pozdnyakoff/opencode-cleaner.git"
+  },
   "license": "MIT",
   "author": "Ilya Pozdnyakov <ipozdnyakoff@outlook.com>",
   "type": "module",
