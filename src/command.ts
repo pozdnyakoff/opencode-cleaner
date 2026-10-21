@@ -19,6 +19,7 @@ export async function run(
 ): Promise<string> {
   const { stdout } = await execa(file, args, {
     ...(signal && { cancelSignal: signal }),
+    env: { OPENCODE_LOG_LEVEL: 'ERROR' },
   })
 
   return stdout

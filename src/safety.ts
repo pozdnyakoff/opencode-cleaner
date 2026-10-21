@@ -36,7 +36,7 @@ export async function plan(
   for (const storage of installation.storage) {
     const target = await root(storage.path, installation.app, protectedPaths)
 
-    if (target) {
+    if (target && (await hasData(target.path))) {
       roots.push({
         names: [storage.name],
         ...target,
@@ -166,4 +166,20 @@ async function root(
       ino: info.ino,
     },
   }
+}
+
+async function hasData(path: string): Promise<boolean> {
+  const info = await lstat(path)
+
+  if (!info.isDirectory()) {
+    return info.size > 0
+  }
+
+  for (const entry of await readdir(path)) {
+    if (await hasData(join(path, entry))) {
+      return true
+    }
+  }
+
+  return false
 }
